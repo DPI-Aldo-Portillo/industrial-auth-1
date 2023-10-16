@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :comments
-  resources :follow_requests
-  resources :likes
-  resources :photos
+  resources :follow_requests, except: [:index, :show, :new, :edit] #Makes it so we can only create
+  resources :likes, only: [:create, :destroy,] #Makes it so we can only create and destroy
+  resources :photos, except: [:index]
 
   get ":username" => "users#show", as: :user
   get ":username/liked" => "users#liked", as: :liked
