@@ -4,7 +4,7 @@
   </div>
 </div>
 
-<% if current_user == @user || !@user.private? || current_user.leaders.include?(@user) %> <!-- If user has public profile or is user's profile or logged in user follows, posts may be rendered-->
+<%# if current_user == @user || !@user.private? || current_user.leaders.include?(@user) %> <!-- If user has public profile or is user's profile or logged in user follows, posts may be rendered-->
   <div class="row mb-2">
     <div class="col-md-6 offset-md-3">
       <%= render "users/profile_nav", user: @user %>
@@ -18,4 +18,4 @@
       </div>
     </div>
   <% end %>
-<% end %>
+<%# end %>
